@@ -1,5 +1,4 @@
 
-
 # DEPENDENCIES ------------------------------------------------------------
 
 install_and_load_packages <- function() {
@@ -29,9 +28,6 @@ read_and_clean_csv_data <- function(file_path) {
 clean_data <- function(data) {
   # Remove rows with null values
   cleaned_data <- na.omit(data)
-  
-  # We erase outliers
-  cleaned_data <- remove_outliers(cleaned_data)
   
   # Normalization: 
   for (col in names(cleaned_data)[-which(names(cleaned_data) == "Outcome")]) {
@@ -159,14 +155,16 @@ visualize_data <- function(original_data, synthetic_data) {
 # Functions use case ---------------------------------------------------------------
 install_and_load_packages()
 
-# Here you need to replace "Your_Data.csv" with the path to your CSV file
-data <- read_and_clean_csv_data("Your_Data.csv")
+head(data) 
+
+data <- read_and_clean_csv_data("Synthetic Data Project/diabetes.csv")
 
 # Train the linear regression model
 model <- train_linear_model(data)
 
+print(dim(data)) # to know how many n_sample we will put in the function
 # Generation of synthetic data based on the trained model
-synthetic_data <- generate_synthetic_data(model, data, 1000) # Here we use 1000 samples as an example
+synthetic_data <- generate_synthetic_data(model, data, 768) # Here we use 768 samples as an example
 
 # Evaluation of model performance
 evaluation_result <- evaluate_model(model, data, synthetic_data)
@@ -176,4 +174,3 @@ print(evaluation_result$result)
 
 # Visualization of data
 visualize_data(data, synthetic_data)
-
