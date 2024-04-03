@@ -1,0 +1,10 @@
+Package: synthR
+Type: Package
+Title: Synthetic Data Generation
+Version: 0.1.0
+Author: Sandra Galiber
+Maintainer: Sandra Galiber <sandra.galiber@gmail.com>
+Description: Tools and functions for generating synthetic data and evaluating machine learning models using synthetic data. Synthetic data generation is useful for sharing or analyzing sensitive datasets while protecting individuals' privacy. This package is intended for researchers, data scientists, and privacy professionals working with sensitive datasets who wish to explore the use of synthetic data in their analyses and machine learning models.
+License: MIT
+Encoding: UTF-8
+LazyData: true

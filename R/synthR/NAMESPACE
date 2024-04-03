@@ -1,0 +1,2 @@
+exportPattern("^[[:alpha:]]+")
+export(evaluate_model, generate_synthetic_data, read_and_clean_csv_data, train_linear_model, visualize_data)
